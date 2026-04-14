@@ -1,136 +1,397 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuria Cidelin | Kia Cabos</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-
-<body class="bg-zinc-950 text-white font-sans">
-
-<!-- HEADER -->
-<header class="bg-white text-black py-3 px-4 flex justify-between items-center">
-    <img src="./assets/img/logo.jpg" class="h-10">
-    <span class="text-sm font-semibold">📍 Los Cabos</span>
-</header>
-
-<!-- HERO -->
-<section class="text-center px-6 py-16 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1550355291-bbee04a92027');">
+    <title>Nuria Cidelin | Tu Asesora de Confianza en Kia Cabos | Estrena Hoy</title>
+    <meta name="description" content="¿Buscas auto nuevo en Los Cabos? Nuria Cidelin te ofrece atención VIP en Kia Cabos. Financiamiento flexible, tomamos tu auto a cuenta y trámite rápido. ¡Cotiza por WhatsApp!">
     
-    <div class="bg-black/80 p-6 rounded-xl">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Identidad Kia: Negro puro y Blanco. Usamos Zinc para escalas de grises premium.
+                        brand: {
+                            dark: '#000000',
+                            light: '#FFFFFF',
+                            accent: '#22c55e', // Verde WhatsApp para CTAs de conversión
+                            'accent-hover': '#16a34a',
+                        }
+                    },
+                    fontFamily: {
+                        // Usamos una fuente sans-serif moderna y limpia por defecto
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        <img src="./assets/img/perfil.jpeg" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white">
+    <style>
+        /* Optimización de visualización de Swiper */
+        .hero-swiper .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Ajuste de tipografía global para Inter */
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-zinc-950 font-sans text-gray-300 antialiased selection:bg-brand-accent selection:text-white mobile-first">
 
-        <h1 class="text-3xl font-bold mb-4">
-            🚗 Estrena tu auto SIN complicaciones en Los Cabos
-        </h1>
-
-        <p class="text-gray-300 mb-6">
-            Te ayudo a conseguir la mejor tasa, tomar tu auto a cuenta y aprobar tu crédito rápido.
-        </p>
-
-        <a href="https://wa.me/5216241714069?text=Hola%20quiero%20cotizar%20un%20Kia" 
-           class="bg-green-500 px-6 py-4 rounded-xl text-lg font-bold block">
-           💬 Quiero mi cotización ahora
-        </a>
-
-        <p class="text-sm text-gray-400 mt-3">
-            🟢 En línea • Respuesta rápida
-        </p>
-
-    </div>
-</section>
-
-<!-- AUTOS -->
-<section class="py-16 px-6">
-    <h2 class="text-2xl font-bold text-center mb-10">
-        Modelos disponibles 🔥
-    </h2>
-
-    <div class="grid gap-6">
-
-        <!-- AUTO 1 -->
-        <div class="bg-zinc-900 p-4 rounded-xl">
-            <img src="https://images.unsplash.com/photo-1606152421802-db97b9c7a11b" class="rounded-lg mb-3">
-            <h3 class="font-bold text-lg">Kia Forte</h3>
-            <p class="text-gray-400 text-sm">Desde $320,000</p>
-            <a href="https://wa.me/5216241714069?text=Me interesa el Kia Forte"
-               class="block bg-green-500 mt-3 p-3 text-center rounded-lg font-bold">
-               Cotizar este modelo
-            </a>
+    <header class="bg-zinc-950/90 border-b border-zinc-800 sticky top-0 z-50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="./assets/img/logo.png" alt="Kia Cabos Logo" class="h-9 w-auto md:h-12 object-contain filter brightness-0 invert">
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <div class="text-xs md:text-sm font-medium text-zinc-400 bg-zinc-800 px-3 py-1.5 rounded-full flex items-center shadow-inner">
+                    <i class="fa-solid fa-location-dot text-red-500 mr-2 animate-pulse"></i> Los Cabos, BCS
+                </div>
+                <a href="https://wa.me/5216241714069?text=Hola%20Nuria%2C%20quiero%20cotizar%20un%20Kia." target="_blank" class="hidden md:inline-flex items-center gap-2 bg-zinc-100 text-zinc-950 font-semibold text-sm py-2 px-5 rounded-full hover:bg-white transition-all transform hover:scale-105">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Cotizar Ahora
+                </a>
+            </div>
         </div>
+    </header>
 
-        <!-- AUTO 2 -->
-        <div class="bg-zinc-900 p-4 rounded-xl">
-            <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791" class="rounded-lg mb-3">
-            <h3 class="font-bold text-lg">Kia Seltos</h3>
-            <p class="text-gray-400 text-sm">Desde $420,000</p>
-            <a href="https://wa.me/5216241714069?text=Me interesa el Kia Seltos"
-               class="block bg-green-500 mt-3 p-3 text-center rounded-lg font-bold">
-               Cotizar este modelo
-            </a>
+    <main>
+        <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 lg:pt-28 lg:pb-40 overflow-hidden min-h-[90vh] flex items-center border-b border-zinc-800">
+            
+            <div class="swiper hero-swiper absolute inset-0 z-0 w-full h-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Kia Auto Performance"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Kia SUV Interior Premium"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Kia EV Modern Design"></div>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-zinc-950/90 via-zinc-950/80 to-zinc-950 z-10"></div>
+            </div>
+
+            <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    
+                    <div class="lg:col-span-8 text-center lg:text-left text-white order-2 lg:order-1">
+                        <span class="inline-flex items-center py-1.5 px-4 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-100 font-semibold text-xs tracking-wider uppercase mb-6 shadow-xl">
+                            <span class="relative flex h-2 w-2 mr-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>
+                            </span>
+                            Atención VIP & Trámite Digital
+                        </span>
+                        
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-6 tracking-tighter">
+                            Estrena tu Kia <br class="hidden sm:block"> sin vueltas con <span class="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-white">Nuria Cidelin.</span>
+                        </h1>
+                        
+                        <p class="text-lg md:text-xl text-zinc-300 mb-10 font-normal max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Tu Asesora de Confianza en Kia Cabos. Financiamiento a tu medida, tomamos tu auto a cuenta y agilizamos todo el papeleo. <strong class="text-white">Aprobación rápida y segura.</strong>
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="https://wa.me/5216241714069?text=Hola%20Nuria%2C%20quiero%20cotizar%20un%20Kia%20hoy." target="_blank" class="inline-flex items-center justify-center gap-3 bg-brand-accent text-white font-bold text-lg py-4 px-10 rounded-2xl shadow-[0_10px_30px_rgba(34,197,94,0.3)] hover:bg-brand-accent-hover transition-all transform hover:-translate-y-1 w-full sm:w-auto">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                Iniciar Cotización VIP
+                            </a>
+                            <a href="#modelos" class="text-zinc-400 font-semibold text-base py-3 px-6 rounded-2xl hover:text-white transition-colors">
+                                Ver Modelos 2024
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-4 relative w-full max-w-xs sm:max-w-sm mx-auto order-1 lg:order-2">
+                        <div class="relative z-10 aspect-square mx-auto rounded-full border-[6px] border-zinc-800 shadow-3xl overflow-hidden bg-zinc-900 ring-4 ring-zinc-700/50">
+                            <img src="./assets/img/perfil.jpeg" alt="Nuria Cidelin Ceseña - Asesora Kia" class="w-full h-full object-cover object-top transform hover:scale-110 transition-transform duration-500">
+                        </div>
+                        
+                        <div class="absolute -bottom-2 -right-2 md:-right-6 bg-zinc-900 border border-zinc-700 p-4 rounded-3xl shadow-3xl z-20 flex items-center gap-4 animate-pulse-slow">
+                            <div class="bg-brand-accent/10 text-brand-accent p-3 rounded-2xl flex-shrink-0">
+                                <i class="fa-solid fa-file-signature text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-extrabold text-sm text-white">Crédito Pre-Aprobado</p>
+                                <p class="text-xs text-zinc-400 font-medium">Respuesta el mismo día</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="modelos" class="bg-zinc-950 py-24 border-b border-zinc-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 max-w-2xl mx-auto">
+                    <span class="text-brand-accent font-semibold text-sm uppercase tracking-widest">Modelos 2024</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tighter mt-2">Encuentra tu Kia ideal</h2>
+                    <p class="mt-4 text-lg text-zinc-400">Diseño innovador, tecnología avanzada y la mejor garantía de México.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden group hover:border-zinc-700 transition-all shadow-xl hover:-translate-y-2">
+                        <div class="aspect-[16/10] overflow-hidden bg-black">
+                            <img src="https://www.kia.com/content/dam/kwcms/mx/es/images/vehicles/k3/sedan/exterior/k3_sedan_side.png" alt="Kia K3 Sedán" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 p-4">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-2xl text-white tracking-tight">Nuevo Kia K3 Sedán</h3>
+                            <p class="text-sm text-zinc-400 mt-1 mb-4">Eficiencia y espacio para tu día a día.</p>
+                            <div class="flex items-end justify-between gap-4 mb-6">
+                                <div>
+                                    <p class="text-xs text-zinc-500 uppercase tracking-wider">Mensualidad desde</p>
+                                    <p class="text-2xl font-extrabold text-white tracking-tight">$4,999 MXN*</p>
+                                </div>
+                                <span class="text-xs text-zinc-600 font-medium">*Sujeto a crédito</span>
+                            </div>
+                            <a href="https://wa.me/5216241714069?text=Hola%20Nuria%2C%20me%20interesa%20cotizar%20el%20Nuevo%20Kia%20K3." target="_blank" class="block w-full text-center bg-zinc-800 text-white font-semibold py-3.5 px-6 rounded-xl group-hover:bg-zinc-700 transition-colors">
+                                Cotizar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden group hover:border-zinc-700 transition-all shadow-xl hover:-translate-y-2">
+                        <div class="aspect-[16/10] overflow-hidden bg-black">
+                            <img src="https://www.kia.com/content/dam/kwcms/mx/es/images/vehicles/seltos/ exterior/seltos_side.png" alt="Kia Seltos SUV" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 p-4">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-2xl text-white tracking-tight">Kia Seltos</h3>
+                            <p class="text-sm text-zinc-400 mt-1 mb-4">La SUV tecnológica y versátil que buscas.</p>
+                            <div class="flex items-end justify-between gap-4 mb-6">
+                                <div>
+                                    <p class="text-xs text-zinc-500 uppercase tracking-wider">Mensualidad desde</p>
+                                    <p class="text-2xl font-extrabold text-white tracking-tight">$6,200 MXN*</p>
+                                </div>
+                                <span class="text-xs text-zinc-600 font-medium">*Sujeto a crédito</span>
+                            </div>
+                            <a href="https://wa.me/5216241714069?text=Hola%20Nuria%2C%20me%20interesa%20cotizar%20la%20Kia%20Seltos." target="_blank" class="block w-full text-center bg-zinc-800 text-white font-semibold py-3.5 px-6 rounded-xl group-hover:bg-zinc-700 transition-colors">
+                                Cotizar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden group hover:border-zinc-700 transition-all shadow-xl hover:-translate-y-2">
+                        <div class="aspect-[16/10] overflow-hidden bg-black">
+                            <img src="https://www.kia.com/content/dam/kwcms/mx/es/images/vehicles/sportage/exterior/sportage_side.png" alt="Kia Sportage" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 p-4">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-2xl text-white tracking-tight">Nueva Kia Sportage</h3>
+                            <p class="text-sm text-zinc-400 mt-1 mb-4">Estilo premium y potencia inigualable.</p>
+                            <div class="flex items-end justify-between gap-4 mb-6">
+                                <div>
+                                    <p class="text-xs text-zinc-500 uppercase tracking-wider">Mensualidad desde</p>
+                                    <p class="text-2xl font-extrabold text-white tracking-tight">$8,500 MXN*</p>
+                                </div>
+                                <span class="text-xs text-zinc-600 font-medium">*Sujeto a crédito</span>
+                            </div>
+                            <a href="https://wa.me/5216241714069?text=Hola%20Nuria%2C%20me%20interesa%20cotizar%20la%20Nueva%20Kia%20Sportage." target="_blank" class="block w-full text-center bg-zinc-800 text-white font-semibold py-3.5 px-6 rounded-xl group-hover:bg-zinc-700 transition-colors">
+                                Cotizar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="beneficios" class="bg-zinc-950 py-24 border-b border-zinc-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 max-w-2xl mx-auto">
+                    <span class="text-brand-accent font-semibold text-sm uppercase tracking-widest">¿Por qué Nuria Cidelin?</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tighter mt-2">La forma más fácil de estrenar</h2>
+                    <p class="mt-4 text-lg text-zinc-400">Olvídate de los trámites complicados. Te ofrezco una experiencia premium y resultados rápidos.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl shadow-xl transition-all group hover:border-brand-accent/20 hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-zinc-800 text-brand-accent rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-accent group-hover:text-zinc-950 transition-colors shadow-lg">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-white tracking-tight">Auto a Cuenta</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed font-normal">Obtén el <strong class="text-zinc-100">mejor valor del mercado</strong> por tu auto actual y úsalo como enganche para tu nuevo Kia.</p>
+                    </div>
+
+                    <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl shadow-xl transition-all group hover:border-brand-accent/20 hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-zinc-800 text-brand-accent rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-accent group-hover:text-zinc-950 transition-colors shadow-lg">
+                            <i class="fa-solid fa-percent"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-white tracking-tight">Tasas Preferenciales</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed font-normal">Acceso a planes de financiamiento <strong class="text-zinc-100">exclusivos de Kia Finance</strong> con las tasas más competitivas.</p>
+                    </div>
+
+                    <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl shadow-xl transition-all group hover:border-brand-accent/20 hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-zinc-800 text-brand-accent rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-accent group-hover:text-zinc-950 transition-colors shadow-lg">
+                            <i class="fa-solid fa-stopwatch"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-white tracking-tight">Trámite Ágil</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed font-normal">Aprobación de crédito en <strong class="text-zinc-100">menos de 24 horas</strong> y papeleo simplificado, incluso digital.</p>
+                    </div>
+
+                    <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl shadow-xl transition-all group hover:border-brand-accent/20 hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-zinc-800 text-brand-accent rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-accent group-hover:text-zinc-950 transition-colors shadow-lg">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-white tracking-tight">Atención 1-a-1</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed font-normal">Asesoría personalizada y transparente en todo momento. <strong class="text-zinc-100">Trato directo y VIP.</strong></p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="proceso" class="bg-zinc-950 py-24 border-b border-zinc-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 max-w-2xl mx-auto">
+                    <span class="text-brand-accent font-semibold text-sm uppercase tracking-widest">Es muy fácil</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tighter mt-2">Tu camino al estreno</h2>
+                    <p class="mt-4 text-lg text-zinc-400">4 pasos simples para manejar tu nuevo Kia en tiempo récord.</p>
+                </div>
+                
+                <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="hidden lg:block absolute top-[44px] left-10 right-10 h-0.5 bg-zinc-800 z-0"></div>
+                    
+                    <div class="relative z-10 text-center lg:text-left">
+                        <div class="w-16 h-16 bg-zinc-900 border-4 border-zinc-800 text-white rounded-full flex items-center justify-center text-2xl font-extrabold mx-auto lg:mx-0 mb-6 shadow-xl ring-2 ring-brand-accent/30">
+                            1
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-white tracking-tight">Contáctame</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed px-4 lg:px-0">Mándame un WhatsApp para <strong class="text-zinc-100">elegir tu modelo</strong> ideal.</p>
+                    </div>
+
+                    <div class="relative z-10 text-center lg:text-left">
+                        <div class="w-16 h-16 bg-zinc-900 border-4 border-zinc-800 text-white rounded-full flex items-center justify-center text-2xl font-extrabold mx-auto lg:mx-0 mb-6 shadow-xl ring-2 ring-brand-accent/30">
+                            2
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-white tracking-tight">Pre-Aprobación</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed px-4 lg:px-0">Ingresamos tu solicitud para obtener respuesta <strong class="text-zinc-100">el mismo día</strong>.</p>
+                    </div>
+
+                    <div class="relative z-10 text-center lg:text-left">
+                        <div class="w-16 h-16 bg-zinc-900 border-4 border-zinc-800 text-white rounded-full flex items-center justify-center text-2xl font-extrabold mx-auto lg:mx-0 mb-6 shadow-xl ring-2 ring-brand-accent/30">
+                            3
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-white tracking-tight">Papeleo Mínimo</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed px-4 lg:px-0">Firmamos contrato y <strong class="text-zinc-100">tomamos tu auto</strong> actual (si aplica).</p>
+                    </div>
+
+                    <div class="relative z-10 text-center lg:text-left">
+                        <div class="w-16 h-16 bg-zinc-800 border-4 border-brand-accent text-brand-accent rounded-full flex items-center justify-center text-2xl font-extrabold mx-auto lg:mx-0 mb-6 shadow-2xl ring-4 ring-brand-accent/30">
+                            <i class="fa-solid fa-key"></i>
+                        </div>
+                        <h3 class="font-extrabold text-xl mb-2 text-white tracking-tight">¡Estrena Hoy!</h3>
+                        <p class="text-zinc-300 text-sm leading-relaxed px-4 lg:px-0"><strong class="text-white">Te entrego las llaves</strong> de tu nuevo Kia 2024.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="bg-zinc-950 py-24 border-b border-zinc-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 max-w-2xl mx-auto">
+                    <span class="text-brand-accent font-semibold text-sm uppercase tracking-widest">Clientes Felices</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tighter mt-2">Ellos ya están manejando</h2>
+                    <p class="mt-4 text-lg text-zinc-400">La confianza de mis clientes es mi mejor carta de presentación.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-3xl shadow-inner relative group hover:border-zinc-700 transition-colors">
+                        <i class="fa-solid fa-quote-left absolute top-6 left-6 text-6xl text-zinc-800 opacity-40 group-hover:text-brand-accent/20"></i>
+                        <div class="relative z-10 flex flex-col h-full gap-6">
+                            <p class="text-lg text-zinc-100 leading-relaxed font-medium">"Excelente atención de Nuria. El trámite fue super rápido y transparente. Tomó mi auto a muy buen precio y el mismo día salí estrenando mi Seltos. ¡100% recomendada!"</p>
+                            <div class="flex items-center gap-4 mt-auto">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente Kia Feliz" class="w-14 h-14 rounded-full border-2 border-zinc-700">
+                                <div>
+                                    <p class="font-bold text-white text-base">Carlos Rodríguez</p>
+                                    <p class="text-sm text-brand-accent">Estrenó Kia Seltos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-3xl shadow-inner relative group hover:border-zinc-700 transition-colors">
+                        <i class="fa-solid fa-quote-left absolute top-6 left-6 text-6xl text-zinc-800 opacity-40 group-hover:text-brand-accent/20"></i>
+                        <div class="relative z-10 flex flex-col h-full gap-6">
+                            <p class="text-lg text-zinc-100 leading-relaxed font-medium">"Nuria hizo todo tan fácil. Me consiguió un plan de financiamiento perfecto para mi presupuesto y se encargó de todo el papeleo. La mejor experiencia comprando auto en Los Cabos."</p>
+                            <div class="flex items-center gap-4 mt-auto">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente Kia Feliz" class="w-14 h-14 rounded-full border-2 border-zinc-700">
+                                <div>
+                                    <p class="font-bold text-white text-base">Ana Beltrán</p>
+                                    <p class="text-sm text-brand-accent">Estrenó Nuevo Kia K3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-zinc-950 py-24 border-b border-zinc-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-gradient-to-br from-zinc-800 to-zinc-900 border-2 border-zinc-700 p-12 md:p-16 rounded-[32px] shadow-3xl text-center relative overflow-hidden group">
+                    <div class="absolute -top-24 -right-24 text-[200px] text-zinc-800/30 fa-brands fa-whatsapp group-hover:rotate-12 transition-transform duration-700"></div>
+                    
+                    <div class="relative z-10 max-w-2xl mx-auto">
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tighter leading-tight">¿Listo para estrenar tu Kia esta semana?</h2>
+                        <p class="mt-6 text-xl text-zinc-300 font-normal leading-relaxed">No dejes pasar las promociones vigentes. Mándame un WhatsApp ahora y obtén tu <strong class="text-white">pre-aprobación en minutos</strong>. Te garantizo el mejor trato en Kia Cabos.</p>
+                        
+                        <a href="https://wa.me/5216241714069?text=Hola%20Nuria%2C%20quiero%20aprovechar%20las%20promociones%20de%20Kia%20y%20cotizar." target="_blank" class="inline-flex items-center justify-center gap-3 bg-white text-zinc-950 font-extrabold text-xl py-4.5 px-12 rounded-full shadow-2xl hover:bg-zinc-100 transition-all transform hover:scale-105 mt-12 w-full sm:w-auto">
+                            <i class="fa-brands fa-whatsapp text-3xl"></i>
+                            Cotizar Mi Kia VIP
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-black text-zinc-500 py-16 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-8">
+            <img src="./assets/img/logo.png" alt="Kia Cabos" class="h-10 w-auto filter brightness-0 invert opacity-50">
+            
+            <div class="text-sm font-normal space-y-2">
+                <p class="font-semibold text-zinc-200">Nuria Cidelin Ceseña | Asesora de Ventas Kia Cabos</p>
+                <p>Carretera Transpenisular km 24.5, San José del Cabo, BCS. CP 23400</p>
+            </div>
+            
+            <p class="text-zinc-700 text-xs pt-8 border-t border-zinc-900 w-full max-w-xl">© 2026 Nuria Asesora Kia. Todos los derechos reservados. <br> Landing page elaborada por Kairos Digital. Precios y mensualidades sujetos a cambios por Kia Finance.</p>
         </div>
+    </footer>
 
-    </div>
-</section>
-
-<!-- BENEFICIOS -->
-<section class="bg-zinc-900 py-16 px-6 text-center">
-    <h2 class="text-2xl font-bold mb-10">¿Por qué comprar conmigo?</h2>
-
-    <div class="space-y-6">
-
-        <div>
-            <h3 class="font-bold">💰 Tomo tu auto a cuenta</h3>
-            <p class="text-gray-400 text-sm">Mejor valor por tu vehículo</p>
-        </div>
-
-        <div>
-            <h3 class="font-bold">📄 Crédito fácil</h3>
-            <p class="text-gray-400 text-sm">Incluso sin historial</p>
-        </div>
-
-        <div>
-            <h3 class="font-bold">⚡ Proceso rápido</h3>
-            <p class="text-gray-400 text-sm">Yo me encargo de todo</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- TESTIMONIOS -->
-<section class="py-16 px-6 text-center">
-    <h2 class="text-2xl font-bold mb-8">Clientes satisfechos ⭐</h2>
-
-    <p class="text-gray-400 italic mb-4">
-        "Excelente atención, todo el proceso fue rápido y claro"
-    </p>
-
-    <p class="text-gray-400 italic">
-        "Me ayudó a conseguir mi auto sin complicaciones"
-    </p>
-</section>
-
-<!-- CTA FINAL -->
-<section class="py-16 px-6 text-center bg-green-600">
-    <h2 class="text-2xl font-bold mb-4">
-        🚨 Promociones activas esta semana
-    </h2>
-
-    <a href="https://wa.me/5216241714069?text=Quiero%20mi%20cotización"
-       class="bg-black text-white px-6 py-4 rounded-xl font-bold">
-       Hablar por WhatsApp
+    <a href="https://wa.me/5216241714069?text=Hola%20Nuria%2C%20estoy%20en%20tu%20página%20y%20quiero%20cotizar." target="_blank" class="fixed bottom-5 right-5 md:bottom-8 md:right-8 bg-brand-accent text-white w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-4xl md:text-5xl shadow-[0_10px_30px_rgba(34,197,94,0.5)] hover:bg-brand-accent-hover hover:scale-110 transition-all z-50 animate-pulse-slow">
+        <i class="fa-brands fa-whatsapp"></i>
     </a>
-</section>
 
-<!-- BOTÓN FLOTANTE -->
-<a href="https://wa.me/5216241714069?text=Hola quiero información"
-   class="fixed bottom-5 right-5 bg-green-500 w-16 h-16 flex items-center justify-center rounded-full text-3xl">
-   <i class="fa-brands fa-whatsapp"></i>
-</a>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Inicialización de Swiper Hero Slider (Efecto Fade)
+            const swiper = new Swiper('.hero-swiper', {
+                loop: true,
+                effect: 'fade', // Transición suave entre imágenes
+                speed: 1500,    // Duración de la transición (1.5 segundos)
+                autoplay: {
+                    delay: 5000, // Tiempo entre cada foto (5 segundos)
+                    disableOnInteraction: false,
+                },
+            });
+        });
+    </script>
 </body>
 </html>
